@@ -1,0 +1,43 @@
+{
+  "name": "serverless-name-generator",
+  "version": "1.0.0",
+  "description": "Unique name generator API using AWS Lambda and Serverless",
+  "main": "handler.js",
+  "keywords": [
+    "serverless"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andreasonny83/serverless-name-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andreasonny83/serverless-name-generator/issues"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "scripts": {
+    "serve": "serverless offline start",
+    "deploy": "serverless deploy",
+    "lint": "eslint src",
+    "test": "npm run lint && npm run jest",
+    "test:ci": "npm test && npm run coverage",
+    "jest": "jest",
+    "jest:watch": "jest --watchAll",
+    "coverage": "jest --coverage"
+  },
+  "author": "Andrea SonnY <andreasonny83@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.18.1",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "jest": "^22.4.2",
+    "serverless": "^1.26.0",
+    "serverless-offline": "^3.18.0"
+  },
+  "dependencies": {
+    "unique-names-generator": "^1.0.4"
+  }
+}
