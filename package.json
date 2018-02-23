@@ -29,7 +29,6 @@
   "author": "Andrea SonnY <andreasonny83@gmail.com>",
   "license": "MIT",
   "jest": {
-    "collectCoverage": true,
     "coverageReporters": ["json", "lcov", "html", "text"]
   },
   "devDependencies": {

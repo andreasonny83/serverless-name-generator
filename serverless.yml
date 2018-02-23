@@ -17,8 +17,8 @@ plugins:
 
 functions:
   generate:
-    handler: handler.handler # required, handler set in AWS Lambda
-    name: ${self:provider.stage}-lambda # optional, Deployed Lambda name
+    handler: src/handler.handler # required, handler set in AWS Lambda
+    name: serverless-name-generator-${self:provider.stage} # optional, Deployed Lambda name
     description: Generates unique and memorable names # optional, Description to publish to AWS
     events:
       - http:

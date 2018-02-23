@@ -18,12 +18,9 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: npm install
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+      - run:
+          name: Install Node dependencies
+          command: npm install
 
       - run:
           name: Setup Code Climate test-reporter
@@ -37,6 +34,15 @@ jobs:
             ./cc-test-reporter before-build
             npm run test:ci
             ./cc-test-reporter after-build --exit-code $?
+
+      - run:
+          name: Deploy application
+          command: npm run deploy
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
 
       - store_test_results:
           path: coverage
