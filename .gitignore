@@ -19,6 +19,7 @@ coverage
 coverages
 .coverage.*
 coverage.lcov
+cc-test-reporter
 
 # Dependency directories
 node_modules/

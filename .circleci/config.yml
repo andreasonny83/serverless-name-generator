@@ -32,8 +32,11 @@ jobs:
             chmod +x ./cc-test-reporter
 
       - run:
-          name: Run tests
+          name: Unit tests with coverage
           command: |
             ./cc-test-reporter before-build
             npm run test:ci
-            ./cc-test-reporter after-build --exit-code $EXIT_CODE
+            ./cc-test-reporter after-build --exit-code $?
+
+      - store_test_results:
+          path: coverage
