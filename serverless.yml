@@ -2,8 +2,11 @@ service: serverless-name-generator
 
 package:
   exclude:
-  - coverage/**
-  - .circleci/**
+    - ./**
+  include:
+    - node_modules/
+    - index.js
+    - src/handler.js
 
 provider:
   name: aws
@@ -18,7 +21,6 @@ plugins:
 functions:
   generate:
     handler: src/handler.handler # required, handler set in AWS Lambda
-    name: serverless-name-generator-${self:provider.stage} # optional, Deployed Lambda name
     description: Generates unique and memorable names # optional, Description to publish to AWS
     events:
       - http:

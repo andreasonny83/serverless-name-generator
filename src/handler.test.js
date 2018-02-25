@@ -5,8 +5,13 @@
 
 const { handler } = require('./handler');
 
+jest.mock('unique-names-generator',
+() => ({
+  generate: jest.fn().mockImplementation(() => 'mocked-name'),
+}));
+
 describe('handler', () => {
-  test('the handler function should respond', () => {
+  test('the handler function should work', () => {
     let err;
     let response;
 
@@ -19,27 +24,17 @@ describe('handler', () => {
     expect(response).toBeDefined();
   });
 
-  test('the response should be successfull', () => {
+  test('the response should be successful', () => {
     handler({}, {}, (err, response) => {
       expect(response.statusCode).toEqual(200);
     });
   });
 
-  test('the response should contain a name key', () => {
-    jest.resetModules();
+  test('the response should contain a `name` key', () => {
     const { handler } = require('./handler');
-    const uniqueNameGenerator = require('unique-names-generator');
-    const spy = jest.spyOn(uniqueNameGenerator, 'generate');
-
-    jest.mock('unique-names-generator',
-    () => ({
-        generate: jest.fn().mockImplementation(() => 'mocked-name'),
-      }));
 
     handler({}, {}, (err, response) => {
       expect(response).toMatchSnapshot();
-      expect(spy).toHaveBeenCalledWith();
-      expect(spy).toHaveBeenCalledTimes(1);
     });
   });
 });
