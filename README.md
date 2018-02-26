@@ -6,7 +6,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/b2e9a0f91ca0c15997bb/test_coverage)](https://codeclimate.com/github/andreasonny83/serverless-name-generator/test_coverage)
 
 Live API running on:
-[AWS Lambda](https://ga0z375uzb.execute-api.us-east-1.amazonaws.com/dev/generate)
+[AWS Lambda](https://gu9294gok9.execute-api.us-east-1.amazonaws.com/dev/generate)
 
 This project is build on top of the following Node module:
 [unique-names-generator](https://github.com/andreasonny83/unique-names-generator.git).

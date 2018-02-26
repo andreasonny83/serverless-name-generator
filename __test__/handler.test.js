@@ -3,7 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const { handler } = require('./handler');
+const { handler } = require('../handler');
 
 jest.mock('unique-names-generator',
 () => ({
@@ -31,7 +31,7 @@ describe('handler', () => {
   });
 
   test('the response should contain a `name` key', () => {
-    const { handler } = require('./handler');
+    const { handler } = require('../handler');
 
     handler({}, {}, (err, response) => {
       expect(response).toMatchSnapshot();

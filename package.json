@@ -46,6 +46,6 @@
     "serverless-offline": "^3.18.0"
   },
   "dependencies": {
-    "unique-names-generator": "^1.0.5"
+    "unique-names-generator": "^1.0.6"
   }
 }
