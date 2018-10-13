@@ -5,8 +5,7 @@
 
 const { handler } = require('../handler');
 
-jest.mock('unique-names-generator',
-() => ({
+jest.mock('unique-names-generator', () => ({
   generate: jest.fn().mockImplementation(() => 'mocked-name'),
 }));
 

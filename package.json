@@ -19,8 +19,9 @@
   "scripts": {
     "serve": "serverless offline start",
     "deploy": "serverless deploy",
-    "lint": "eslint src",
-    "test": "npm run lint && npm run jest",
+    "lint": "eslint .",
+    "format": "prettier --write {*.js,__test__/**/*.js}",
+    "test": "npm run lint && npm run format && npm run jest",
     "test:ci": "npm test && npm run coverage",
     "jest": "jest",
     "jest:watch": "jest --watchAll",
@@ -37,15 +38,16 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^4.18.1",
-    "eslint-plugin-import": "^2.9.0",
-    "eslint-plugin-node": "^6.0.1",
-    "eslint-plugin-promise": "^3.6.0",
-    "jest": "^22.4.2",
-    "serverless": "^1.26.0",
-    "serverless-offline": "^3.18.0"
+    "eslint": "^5.7.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.3",
+    "serverless": "^1.32.0",
+    "serverless-offline": "^3.27.0"
   },
   "dependencies": {
-    "unique-names-generator": "^1.0.6"
+    "unique-names-generator": "^1.0.14"
   }
 }

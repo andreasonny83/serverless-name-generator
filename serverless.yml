@@ -4,10 +4,11 @@ package:
   exclude:
     - .circleci
     - coverage
+    - __test__
 
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs8.10
   memorySize: 512
   timeout: 4
   versionFunctions: false # optional, default is true
