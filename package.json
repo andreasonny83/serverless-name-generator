@@ -44,7 +44,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "jest": "^24.8.0",
     "prettier": "^1.18.2",
-    "serverless-offline": "^5.7.2"
+    "serverless-offline": "^12.0.4"
   },
   "dependencies": {
     "unique-names-generator": "^3.0.0"
